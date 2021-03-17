@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Répertoire téléphonique</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+    <img id="logo" src="img/logo.png">
+    <ul>
+        <a class="titre"><li>Repertoire téléphonique</li></a>
+
+        <a class="rechercher" href="#"><li>Recherche</li></a>
+
+        <a class="ajouter" href="ajout.html"><li>Ajout</li></a>
+    </ul>
+</header>
+
+<main id="recherche">
+
+    <h1>Rechercher un contact</h1>
+
+    <form class="rechercher-formular" method="POST" action="res_recherche.php">
+        <input type="text" placeholder="Nom (ex: Garza)" name="nom" />
+        <input type="text" placeholder="Prénom (ex: Mickael)" name="prenom" />
+        <input type="text" placeholder="Où (ex: Nîmes, Iles-de-France, …)" name="adresse" />
+
+        <button type="submit">
+            <img src="img/loupe.svg" width="30" height="30" alt="recherche">
+        </button>
+    </form>
+
+</main>
+
+<footer>
+    <p id="footer">Projet créé par  : <br>
+        Mateo, Lola, Jorian, Thomas
+    </p>
+
+    <a id="retour" href="index.html">Revenir à l'accueil</a>
+</footer>
+
+</body>
+</html>

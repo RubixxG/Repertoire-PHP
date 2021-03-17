@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Répertoire téléphonique</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <img id="logo" src="img/logo.png">
+        <ul>
+            <a class="titre"><li>Repertoire téléphonique</li></a>
+
+            <a class="rechercher" href="recherche.html"><li>Recherche</li></a>
+
+            <a class="ajouter" href="ajout.html"><li>Ajout</li></a>
+        </ul>
+    </header>
+
+    <main id="ajout">
+
+        <h1>Ajouter un contact</h1>
+
+        <form class="ajouter-formulaire" method="POST" action="ajout_fait.php">
+
+            <input type="text" placeholder="Nom du contact" name="nom" required/> <br>
+            <input type="text" placeholder="Prénom du contact" name="prenom" required /> <br>
+            <input type="tel" pattern="[0-9]{10}" placeholder="Entrez un téléphone" required name="telephone" id="telephone"/> <br>
+            <input type="text" placeholder="Adresse du contact" name="adresse" required /> <br>
+
+            <button type="submit" value="Valider">
+                Valider
+            </button>
+        </form>
+
+    </main>
+
+    <footer>
+        <p id="footer">Projet créé par  : <br>
+            Mateo, Lola, Jorian, Thomas
+        </p>
+
+        <a id="retour" href="index.html">Revenir à l'accueil</a>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
