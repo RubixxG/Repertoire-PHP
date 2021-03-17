@@ -47,10 +47,6 @@ a {
     float: right;
     margin-right: 27px;
 }
-.ajouter:hover, .rechercher:hover{
-    background: rgb(189, 96, 255);
-
-}
 /* END Header */
 
 /* Footer */
@@ -79,6 +75,8 @@ p#footer {
     position: relative;
     top: 72px;
     font-size: 28px;
+
+    transition: .2s ease;
 }
 #retour:hover{
     background-color: #5c6666;
@@ -141,15 +139,16 @@ form.ajouter-formulaire {
 .ajouter-formulaire>input {
     padding: 16px 23px;
     border-radius: 100px;
-    border: none;
     width: 17%;
     margin: 10px 0;
     color: #2b2b2b;
     font-size: 17px;
-    position:unset;
+    position: unset;
+    border: 3px solid #fff;
+    transition: .2s ease;
 }
 .ajouter-formulaire>input:focus {
-    border: 7px solid rgba(189,96,255,0.5);
+    border: 3px solid rgba(189,96,255,0.5);
     border-radius: 100px;
 }
 
@@ -184,7 +183,6 @@ form.ajouter-formulaire {
 /* END Ajout */
 
 /* Recherche */
-
 main#recherche {
     background-image: url(img/recherche.png);
     width: 100%;
@@ -211,9 +209,12 @@ form.rechercher-formular>input {
     box-shadow: 1px 3px 4px 1px #adadad42;
     color: #2b2b2b;
     font-size: 17px;
+    border: 3px solid #fff;
+
+    transition: .2s ease;
 }
 form.rechercher-formular>input:focus{
-    border: 4px solid rgba(189,96,255,0.5);
+    border: 3px solid rgba(189,96,255,0.5);
     border-radius: 10px;
 }
 .rechercher-formular>button {
@@ -248,5 +249,97 @@ form.rechercher-formular>input[name="prenom"] {
 .rechercher-formular>button:hover {
     background: rgb(189, 96, 255);
 }
-
 /* END Recherche */
+
+/* RES RECHERCHE */
+main#res-recherche {
+    background-image: url(img/recherche.png);
+    width: 100%;
+    height: 67vh;
+    background-position: center;
+    background-size: cover;
+    background-position-y: -7px;
+}
+
+main#res-recherche>.flex-resultat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+main#res-recherche>.flex-resultat>.resultat-div {
+    background: #fff;
+    height: 518px;
+    width: 929px;
+    padding: 61px 69px;
+    border-radius: 33px;
+    margin-top: 61px;
+    box-shadow: 1px 3px 19px 0px #5252523d;
+    margin-right: -203px;
+    position: relative;
+}
+
+main#res-recherche>.flex-resultat>.resultat-div>h1 {
+    color: #E2C1FA;
+    font-weight: 400;
+    font-size: 34px;
+}
+
+main#res-recherche>.flex-resultat>.resultat-div>p {
+    color: #94A5A5;
+    margin: 21px 0;
+    font-size: 22px;
+}
+
+main#res-recherche>.flex-resultat>.resultat-div>p.not-found {
+    text-align: center;
+    margin-top: 130px;
+    font-size: 29px;
+}
+
+main#res-recherche>.flex-resultat>.resultat-div>a {
+    color: white;
+    background: rgb(225,192,249);
+    background: linear-gradient(
+            310deg
+            , rgba(225,192,249,1) 21%, rgba(236,216,251,1) 100%);
+    border-radius: 100px;
+    padding: 13px 29px 13px 29px;
+    text-decoration: none;
+    position: absolute;
+    right: 23px;
+    bottom: 19px;
+}
+/* END RES RECHERCHE */
+
+/* AJOUT FAIT */
+main#ajout-fait {
+    background-image: url(img/ajout.jpg);
+    width: 100%;
+    height: 67vh;
+    background-position: center;
+    background-size: cover;
+    background-position-y: -7px;
+}
+
+main#ajout-fait>.flex-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main#ajout-fait>.flex-div>.resultat-div {
+    background: #fff;
+    height: 161px;
+    width: 488px;
+    border-radius: 34px;
+    margin-top: 233px;
+}
+
+main#ajout-fait>.flex-div>.resultat-div>p {
+    text-align: center;
+    font-size: 22px;
+    padding: 52px 0;
+    color: #2f2f2f;
+    font-weight: bold;
+}
+/* END AJOUT FAIT */
