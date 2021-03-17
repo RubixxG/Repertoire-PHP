@@ -27,23 +27,7 @@
             return $this->adresse;
         }
 
-        public function setNom($nom) {
-            $this->nom = $nom;
-        }
-
-        public function setPrenom($prenom) {
-            $this->prenom = $prenom;
-        }
-
-        public function setTelephone($telephone) {
-            $this->telephone = $telephone;
-        }
-
-        public function setAdresse($adresse) {
-            $this->adresse = $adresse;
-        }
-
-        public function getDonnees() {
+        private function getDonnees() {
             return [
                 "nom" => $this->nom,
                 "prenom" => $this->prenom,
@@ -56,10 +40,8 @@
             $resultat = "";
             $donnees = $this->getDonnees();
             
-            foreach($donnees as $i => $value)  {
-                if ($i < sizeof($donnees))
-                    $resultat .= $value . "█";
-            }
+            foreach($donnees as $i => $value)
+                $resultat .= $value . "█";
             $resultat .= "\n";
             return $resultat;
         }

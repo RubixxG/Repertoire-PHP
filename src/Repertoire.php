@@ -14,7 +14,7 @@ function ecrire($contact) {
     global $contenu, $nom_fichier;
 
     $nom = $contact->getNom();
-    $telephone = $contact->getPrenom();
+    $telephone = $contact->getTelephone();
 
     if(!existe($nom) || !existe($telephone)) {
         $contenu .= $contact->toString();
@@ -26,7 +26,7 @@ function ecrire($contact) {
 function getInformations($nom = null, $adresse = null, $prenom = null) {
     $repertoire = getRepertoire();
 
-    for ($i = 0; $i < sizeof($repertoire); $i++) {
+    for ($i = 0; $i < sizeof($repertoire)-1; $i++) {
         $resultat = explode('█', $repertoire[$i]);
         if ($resultat[0] == $nom || $resultat[1] == $prenom || $resultat[3] == $adresse)
             return new Contact($resultat[0], $resultat[1], $resultat[2], $resultat[3]);

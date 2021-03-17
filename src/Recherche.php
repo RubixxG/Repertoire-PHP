@@ -12,23 +12,29 @@ class Recherche {
 
     public function rechercher() {
         extract($this->arguments);
+
         if(!empty($adresse) && empty($nom) && empty($prenom)) {
             $resultats = $this->afficher_par_adresse($adresse);
             if(sizeof($resultats) > 0) {
+                echo '<h1>Voici les resultats ('. sizeof($resultats) . ')</h1>';
                 foreach($resultats as $key => $value)
                     $this->afficher($value);
             } else
-                echo '<p>Aucun resultat trouvé.</p>';
-        } else 
+                echo '<p class="not-found">Aucun resultat trouvé.</p>';
+        } else {
+            echo '<h1>Voici les resultats pour ' . $nom . '</h1>';
             $this->afficher_par($nom, $prenom);
+        }
     }
 
     private function afficher_par_adresse($adresse) {
         $repertoire = getRepertoire();
         $resultats = [];
-        for($i = 0; $i < sizeof($repertoire); $i++) {
+
+        for($i = 0; $i < sizeof($repertoire)-1; $i++) {
             $resultat = explode('█', $repertoire[$i]);
-            array_push($resultats, new Contact($resultat[0], $resultat[1], $resultat[2], $resultat[3]));
+            if($resultat[3] == $adresse)
+                array_push($resultats, new Contact($resultat[0], $resultat[1], $resultat[2], $resultat[3]));
         }
         return $resultats;
     }
@@ -38,7 +44,7 @@ class Recherche {
         if($informations != null)
             $this->afficher($informations);
         else 
-            echo '<p>Désolé, le nom ' . $nom . ' est inconnu</p>';
+            echo '<p class="not-found">Désolé, le nom ' . $nom . ' est inconnu</p>';
     }
 
     private function afficher($contact) {
